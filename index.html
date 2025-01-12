@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idk dont tell me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        #content {
+            display: none;
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Enter Password</h1>
+        <div class="container">
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>Welcome to the Minecraft Server!</h1>
+        <p><strong>Server IP:</strong> <span id="server-ip">nerds.my.id</span></p>
+        <p><strong>Fabric Version:</strong> <span id="server-ip">(latest)</span></p>
+        <p><strong>Whitelisted?:</strong> <span id="server-ip">yes, (ask ivy for whitelist)</span></p>
+        <p>Click the button below to download the mod pack.</p>
+        <a id="download-link" href="https://hyprix-bfdi.github.io/server/mods.zip" download>
+            <button>Download Mods</button>
+        </a>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = 'ivyclub';
+
+            if (password === correctPassword) {
+                document.getElementById('login').classList.add('hidden');
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+    </script>
+</body>
+</html>
