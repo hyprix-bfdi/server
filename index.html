@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>idk dont tell me</title>
+    <title>Private Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,8 +46,8 @@
     <div id="content">
         <h1>Welcome to the Minecraft Server!</h1>
         <p><strong>Server IP:</strong> <span id="server-ip">nerds.my.id</span></p>
-        <p><strong>Fabric Version:</strong> <span id="server-ip">(latest)</span></p>
-        <p><strong>Whitelisted?:</strong> <span id="server-ip">yes, (ask ivy for whitelist)</span></p>
+        <p><strong>Fabric Version:</strong> <span id="fabric-version">(latest)</span></p>
+        <p><strong>Whitelisted?:</strong> <span id="whitelist-info">yes, (ask ivy for whitelist)</span></p>
         <p>Click the button below to download the mod pack.</p>
         <a id="download-link" href="https://hyprix-bfdi.github.io/server/mods.zip" download>
             <button>Download Mods</button>
@@ -55,9 +55,16 @@
     </div>
 
     <script>
+    
+        const Password = "aXZ5Y2x1Yg=="; // 
+
+        function decodeBase64(encoded) {
+            return atob(encoded); // 
+        }
+
         function checkPassword() {
             const password = document.getElementById('password').value;
-            const correctPassword = 'ivyclub';
+            const correctPassword = decodeBase64(Password); // 
 
             if (password === correctPassword) {
                 document.getElementById('login').classList.add('hidden');
